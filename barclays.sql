@@ -169,3 +169,30 @@ FROM employee e
 LEFT JOIN department d
 ON e.dept_no = d.dept_no
 order by e.emp_no;
+
+-- right outer join - fetches matching records from from both the tables + non-matching records from right table 
+
+SELECT e.emp_name, d.dept_no, d.location 
+FROM employee e
+RIGHT JOIN department d
+ON e.dept_no = d.dept_no
+order by e.emp_no;
+
+-- full outer join - fetches matching records + non-mathcing records from from both the tables 
+
+-- SELECT e.emp_name, d.dept_no, d.location 
+-- FROM employee e
+-- FULL OUTER JOIN department d
+-- ON e.dept_no = d.dept_no
+-- order by e.emp_no;
+
+SELECT e.emp_name, d.dept_no, d.location 
+FROM employee e
+LEFT JOIN department d
+ON e.dept_no = d.dept_no
+UNION 
+SELECT e.emp_name, d.dept_no, d.location 
+FROM employee e
+RIGHT JOIN department d
+ON e.dept_no = d.dept_no;
+-- order by employee.emp_no;
