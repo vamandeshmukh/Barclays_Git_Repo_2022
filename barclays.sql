@@ -244,4 +244,54 @@ SELECT * FROM employee WHERE job != 'PRESIDENT';
 SELECT * FROM employee WHERE dept_no IS NULL;
 SELECT * FROM employee WHERE dept_no IS NOT NULL;
 
+SELECT emp_no, emp_name, salary FROM employee order by salary;
+
+SELECT emp_no, emp_name, salary, salary * 1.2 hike FROM employee order by salary;
+SELECT emp_no, emp_name, salary, salary * 1.2 as hike FROM employee order by salary;
+SELECT emp_no, emp_name, salary, salary * 1.2 "hike" FROM employee order by salary;
+
+
+-- [employee] - <works in> - [department] 
+
+SELECT * FROM employee;
+SELECT * FROM department;
+
+-- recursive foreign key 
+
+-- [employee] - <is manager of> - [employee] 
+
+desc employee;
+
+-- q8.   In EMPLOYEE table add a new attribute MGR(Manager ID) consisting 4 Characters. 
+
+alter table employee add mgr int references employee(emp_no);
+
+update employee set mgr = 7001 where emp_no = 7005;
+update employee set mgr = 7001 where emp_no = 7006;
+update employee set mgr = 7002 where emp_no = 7004;
+
+SELECT * FROM employee;
+
+-- Who is Blake's manager? 
+
+SELECT mgr, emp_name from employee where emp_no = 7005;
+
+-- EMP    MGR 
+-- BLAKE JAMES 
+
+SELECT e.emp_no, e.emp_name, m.emp_no, m.emp_name
+FROM employee e JOIN employee m ON e.mgr = m.emp_no 
+WHERE e.emp_no = 7005;
+
+SELECT e.emp_no eid, e.emp_name emp, m.emp_no bid, m.emp_name boss
+FROM employee e JOIN employee m ON e.mgr = m.emp_no 
+WHERE e.emp_no = 7005;
+
+
+
+
+
+
+
+
 
