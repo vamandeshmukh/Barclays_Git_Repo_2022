@@ -196,3 +196,34 @@ FROM employee e
 RIGHT JOIN department d
 ON e.dept_no = d.dept_no;
 -- order by employee.emp_no;
+
+
+	-- mi phone 
+-- 	   left  right 
+	-- mi    phone 
+--     mi products - left 
+--     other phones - right 
+
+-- PK 
+    
+-- check constraint 
+
+-- create table example - at least two columns - check constraint  
+-- insert into example - test the constraint 
+
+CREATE TABLE example (eid int primary key, ename varchar(10), esalary double check(esalary > 0));
+
+insert into example values (101, 'Sonu', 10);
+insert into example values (102, 'Monu', -10);
+insert into example values (103, 'Sonu', 10);
+insert into example values (104, 'Monu', -10);
+
+select eid, ename, esalary from example; 
+
+-- aadhhar 
+
+-- -- subquery 
+-- outer query <> (inner query)
+
+
+
