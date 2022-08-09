@@ -116,6 +116,8 @@ insert into employee values (7002, 'MASON', 'PRESIDENT', 10000, str_to_date('6-M
 insert into employee values (7003, 'CLARK', 'MANAGER', 5000, str_to_date('6-May-2004', '%d-%M-%Y'), 20); 
 insert into employee values (7004, 'JOHN', 'MANAGER', 6000, str_to_date('6-Aug-2005', '%d-%M-%Y'), 10); 
 insert into employee values (7005, 'BLAKE', 'CLERK', 3500, str_to_date('6-Sept-2005', '%d-%M-%Y'), 30); 
+insert into employee values (7006, 'SONY', 'ADMIN', 4000, str_to_date('6-May-2005', '%d-%M-%Y'), null); 
+
 
 SELECT * FROM employee;
 SELECT * FROM department;
@@ -128,11 +130,42 @@ SELECT * FROM department;
 -- FROM employee, department
 -- WHERE emp_name = 'JAMES';
 
-SELECT emp_name, location 
+-- SELECT emp_name, location 
+-- FROM employee
+-- JOIN department
+-- ON employee.dept_no = department.dept_no
+-- WHERE emp_name = 'JAMES';
+
+SELECT employee.emp_name, department.dept_no, department.location 
 FROM employee
 JOIN department
 ON employee.dept_no = department.dept_no
-WHERE emp_name = 'JAMES';
+WHERE employee.emp_name = 'JAMES';
 
+SELECT e.emp_name, d.dept_no, d.location 
+FROM employee e
+JOIN department d
+ON e.dept_no = d.dept_no
+WHERE e.emp_name = 'JAMES';
 
+SELECT * FROM employee;
+SELECT * FROM department;
 
+-- list of the employees with their locations 
+
+-- inner join - fetches only matching records from both the tables 
+
+SELECT e.emp_name, d.dept_no, d.location 
+FROM employee e
+JOIN department d
+ON e.dept_no = d.dept_no
+order by e.emp_no;
+
+-- outer joins - 
+-- left outer join - fetches matching records from from both the tables + non-matching records from left table 
+
+SELECT e.emp_name, d.dept_no, d.location 
+FROM employee e
+LEFT JOIN department d
+ON e.dept_no = d.dept_no
+order by e.emp_no;
