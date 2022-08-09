@@ -122,5 +122,17 @@ SELECT * FROM department;
 
 -- join 
 
+-- in which city does JAMES work?
+
+-- SELECT emp_name, location 
+-- FROM employee, department
+-- WHERE emp_name = 'JAMES';
+
+SELECT emp_name, location 
+FROM employee
+JOIN department
+ON employee.dept_no = department.dept_no
+WHERE emp_name = 'JAMES';
+
 
 
