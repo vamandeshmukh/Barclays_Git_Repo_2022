@@ -117,8 +117,6 @@ insert into employee values (7003, 'CLARK', 'MANAGER', 5000, str_to_date('6-May-
 insert into employee values (7004, 'JOHN', 'MANAGER', 6000, str_to_date('6-Aug-2005', '%d-%M-%Y'), 10); 
 insert into employee values (7005, 'BLAKE', 'CLERK', 3500, str_to_date('6-Sept-2005', '%d-%M-%Y'), 30); 
 
-COMMIT;
-
 SELECT * FROM employee;
 SELECT * FROM department;
 
