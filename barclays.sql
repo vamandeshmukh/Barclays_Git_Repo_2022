@@ -120,6 +120,7 @@ insert into employee values (7005, 'BLAKE', 'CLERK', 3500, str_to_date('6-Sept-2
 SELECT * FROM employee;
 SELECT * FROM department;
 
+-- join 
 
 
 
