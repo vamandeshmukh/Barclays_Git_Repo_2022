@@ -225,5 +225,23 @@ select eid, ename, esalary from example;
 -- -- subquery 
 -- outer query <> (inner query)
 
+-- database design approaches - 
+-- top down approach - ER Model - for a completely new project, starting from scratch  
+-- bottom up approach - Normalization - project with some existing data 
+
+select * from employee;
+-- IN, BETWEEN, OR, ... 
+-- IS, IS NOT 
+
+SELECT * FROM employee WHERE job IN ('CLERK', 'ADMIN');
+
+-- SELECT * FROM employee WHERE job IS NOT 'PRESIDENT';
+
+SELECT * FROM employee WHERE job != 'PRESIDENT';
+
+-- SELECT * FROM employee WHERE dept_no == NULL;
+-- SELECT * FROM employee WHERE dept_no != NULL;
+SELECT * FROM employee WHERE dept_no IS NULL;
+SELECT * FROM employee WHERE dept_no IS NOT NULL;
 
 
