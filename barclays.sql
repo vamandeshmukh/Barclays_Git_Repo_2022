@@ -288,6 +288,8 @@ FROM employee e JOIN employee m ON e.mgr = m.emp_no
 WHERE e.emp_no = 7005;
 
 
+SELECT * FROM employee;
+SELECT * FROM department;
 
 
 
